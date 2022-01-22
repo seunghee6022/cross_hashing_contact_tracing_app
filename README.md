@@ -13,7 +13,15 @@ Vaccination side effect check &amp; Self quarantine application - Applied cross 
 
 #### 1. HDKF hash function
 
+---
+
+;;;;
+
+---
+
 #### 2. Contact Tracing Algorithm 
+
+---
 
 `contactTracingAlgorithm.py`  
 
@@ -45,7 +53,11 @@ Finally, matching received Diagnosis Key of infected person and getting notifica
 
    > explanation
 
+---
+
 #### 2. Cross Hashing
+
+---
 
  `crossHasingApp.py`
 
@@ -99,11 +111,19 @@ Finally, we set fixed situation which contains all the possibilities during the 
 
 ### Bluetooth Low Energy
 
+---
+
+
+
 
 
 ---
 
-### New Applicatoin
+### New Application
+
+---
+
+
 
 
 
