@@ -55,7 +55,7 @@ Finally, matching received Diagnosis Key of infected person and getting notifica
 
 ---
 
-#### 2. Cross Hashing
+#### 3. Cross Hashing
 
 ---
 
