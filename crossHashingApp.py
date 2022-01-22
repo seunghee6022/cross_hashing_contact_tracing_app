@@ -59,17 +59,16 @@ def getCCIs(historyRPIs, currentRPIs):
 
     for RPI in currentRPIs:
         for lastRPI in historyRPIs:
-            print(RPI[0:2]==lastRPI[0:2])
             CCI = hkdf.HKDF(RPI[0:12],lastRPI[0:12])[0:9] #k-anonymity
             # storeCCIS.append(CCI)
             signitures = explode(lastRPI[12:16],2)
             if RPI[0:2] in signitures:
                 print(f"matched : {RPI[0:2]} in {signitures}")
                 storeCCIS.append(CCI)
-    if len(storeCCIS)>0:
-        print(storeCCIS)
-    else:
-        print("storeCCIS is empty")
+    # if len(storeCCIS)>0:
+    #     print(storeCCIS)
+    # else:
+    #     print("storeCCIS is empty")
     return storeCCIS
 
 def decodePrint(list):
@@ -145,7 +144,7 @@ def self_quarantine(dailyTk):
         # print(f"Sending....\nbody_conditions :\n{body_conditions}\n and\nrecordedCCIs :\n{recordedCCIs}\nto the server... ")
         # print("Successfully sent")
 
-    def check_symtoms_contact(start_date, end_date):
+    def check_symptoms_contact(start_date, end_date):
         # penalty
         penalty = 0
         start_date = start_date
@@ -234,7 +233,7 @@ def self_quarantine(dailyTk):
     end_date = 14
     penalty = -999
     while penalty:
-        start_date, end_date, penalty = check_symtoms_contact(start_date,end_date)
+        start_date, end_date, penalty = check_symptoms_contact(start_date,end_date)
 
         print(f"TOTAL PENALTY COUNT : {penalty}")
 
