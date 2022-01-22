@@ -112,10 +112,19 @@ Finally, we set fixed situation which contains all the possibilities during the 
 ### Bluetooth Low Energy
 
 ---
+   `Bluetooth_Low_Energy`
 
-
-
-
+It's a basic version showing how to transfer Rolling Proximity Identifiers (RPID) using Bluetooth Low Energy. We get the reference from the Apple Developer (https://developer.apple.com/documentation/corebluetooth/transferring_data_between_bluetooth_low_energy_devices).
+   
+   1. Download the folder and open it with Xcode 11.1+.
+   2. From Xcode, go to Sgning & Capabilities. Please sign in with your Apple Development Team account. 
+   3. Please prepare two Apple devices with availablility of iOS 12.0+/iPadOS 12.0+.
+   4. Get two cables with each connect a device to the laptop. 
+   5. Select your device as the Build simulator from Xcode and run the project (Do this step for both devices one by one.)
+   6. On your each device, go to Setting > General > VPN & Device Management > Developer App. Click on the application and make it trusted. 
+   7. Open the application on both of your devices, and make one as the central and the other as the pheripheral. You should be able to see how it works now :)
+   
+   
 
 ---
 
@@ -123,6 +132,8 @@ Finally, we set fixed situation which contains all the possibilities during the 
 
 ---
 
+We built the application interface using Figma. 
+Here is the link: https://www.figma.com/file/m2KAm3DHK7Ka3P7m8h5KMV/Contact-Tracing?node-id=148%3A1231. 
 
 
 
