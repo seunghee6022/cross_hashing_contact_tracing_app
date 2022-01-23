@@ -78,30 +78,30 @@ def decodePrint(list):
     print(f"Decoded List: \n{decoded_list}")
 
 # if broadcast 4th RPIs in a row, then send msg
-def vaccineSideEffectCheck(waiting_time,dailyTk):
+def vaccineObservationCheck(waiting_time,dailyTk):
     run_away = []
-    def TIN_check(now=None):
-        if now is None:
-            now = math.trunc(time.time())
-        TIN = str(math.floor((now - epoch_time) / (60 * window_size)))
-        return TIN
+
+    def get_user_storeCCIs_from_device(dailyTk):
+        storeCCIs = [] # WE ASSUME GET FROM THE DEVICE
+        return storeCCIs
 
     check_flag = True
     start_time = datetime.datetime.now()
     finish_time = start_time + datetime.timedelta(minutes=waiting_time)
+
     # Every 5 mins check the person's RPI is saved to the serverDB
-    def checkRPI(TIN, dailyTk):
+    def checkCCI(dailyTk):
         global check_flag
-        RPI = getRollingProximityID(dailyTk,TIN=TIN)
-        if RPI not in serverDB:
+        storeCCIs = get_user_storeCCIs_from_device(dailyTk)
+        CCI = storeCCIs[-1]
+        if CCI not in serverDB:
             check_flag = False
             run_away.append(dailyTk)
         return check_flag
     # check every 5 minutes
     interval = waiting_time/5
     for i in range(interval,0,-1):
-        TIN = TIN_check()
-        check_flag = checkRPI(TIN, dailyTk)
+        check_flag = checkCCI(dailyTk)
         if check_flag:
             if i>0:
                 print(f"Waiting time {5*i}minutes left")
